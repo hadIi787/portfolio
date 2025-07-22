@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hadi Muhammed | Junior AI Engineer Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <canvas id="three-bg"></canvas>
+  <!-- Three.js 3D transitions will be rendered here -->
+  <canvas id="bg-particles"></canvas>
+  <!-- Animated digital data streams background -->
+  <div class="background-animated"></div>
+  <div class="floating-keywords"></div>
+  <!-- NAVIGATION TABS -->
+  <nav class="nav-tabs premium-nav">
+    <button class="nav-tab" data-tab="hero"><span class="nav-icon">🏠</span> Home</button>
+    <button class="nav-tab" data-tab="about"><span class="nav-icon">👤</span> About</button>
+    <button class="nav-tab" data-tab="projects"><span class="nav-icon">💡</span> Projects</button>
+    <button class="nav-tab" data-tab="skills"><span class="nav-icon">🛠️</span> Skills</button>
+    <button class="nav-tab" data-tab="data-analysis"><span class="nav-icon">📊</span> Data Analysis</button>
+    <button class="nav-tab" data-tab="education"><span class="nav-icon">🎓</span> Education</button>
+    <button class="nav-tab" data-tab="passions"><span class="nav-icon">🎥</span> Passions</button>
+    <button class="nav-tab" data-tab="contact"><span class="nav-icon">✉️</span> Contact</button>
+  </nav>
+
+  <!-- Dark/Light mode toggle -->
+  <button class="mode-toggle" aria-label="Toggle dark/light mode">
+    <span class="gear"></span>
+  </button>
+
+  <!-- HERO SECTION -->
+  <header class="hero" id="hero">
+    <div class="hero-content hero-animate">
+      <h1 class="hero-title illuminated-text">
+        HADI MUHAMMED
+      </h1>
+      <h2 class="hero-subtitle">Junior AI Engineer & 12th Grade Student</h2>
+      <p class="hero-tagline">Driving the future: Innovating in Automotive AI & Business Intelligence</p>
+      <div class="hero-contacts">
+        <a href="mailto:hadimuhammed185@gmail.com" class="contact-icon email" title="Email" target="_blank">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4.5A2.5 2.5 0 014.5 2h15A2.5 2.5 0 0122 4.5v15a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 19.5v-15z" stroke="#00E5FF" stroke-width="2"/><path d="M3.5 5.5L12 13l8.5-7.5" stroke="#2962FF" stroke-width="2"/></svg>
+        </a>
+        <a href="https://instagram.com/hadi____130" class="contact-icon instagram" title="Instagram" target="_blank">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#00E5FF" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="#2962FF" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#2962FF"/></svg>
+        </a>
+        <a href="https://threads.net/@hadi____130" class="contact-icon threads" title="Threads" target="_blank">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#00E5FF" stroke-width="2"/><path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="#2962FF" stroke-width="2"/></svg>
+        </a>
+        <a href="https://wa.me/97339133636" class="contact-icon whatsapp" title="WhatsApp" target="_blank">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#00E5FF" stroke-width="2"/><path d="M7 17l2-2c.2-.2.5-.2.7 0l1.3 1.3c.2.2.5.2.7 0l3.3-3.3c.2-.2.2-.5 0-.7l-1.3-1.3c-.2-.2-.2-.5 0-.7l2-2" stroke="#2962FF" stroke-width="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT ME SECTION -->
+  <section class="about about-animate" id="about">
+    <h2>About Me</h2>
+    <p class="about-font">
+      I’m a passionate 12th-grade student at <strong>Caliph Life School (2024–Present)</strong> and an <strong>ISB Bahrain alumni</strong>. As a Junior AI Engineer, I am deeply fascinated by the intersection of artificial intelligence, automobile technology, and business intelligence. My journey began with a curiosity for how machines think and evolved into a mission to build intelligence into vehicles and business systems. I aspire to earn a professional degree in automobile engineering, a master’s in AI, and an MBA from the Indian Institute of Management. <br><br>
+      Beyond technology, I am an avid <strong>photographer and videographer</strong>, capturing stories through my lens and exploring the world’s beauty in every frame. My creative pursuits fuel my technical ambitions, allowing me to approach problems with both analytical precision and artistic vision. I am committed to becoming a leader in automotive AI innovation, blending creativity, data, and engineering to shape the future of mobility and business.
+    </p>
+  </section>
+
+  <!-- KEY PROJECTS SECTION -->
+  <section class="projects projects-animate" id="projects">
+    <h2>Key Projects</h2>
+    <div class="project-cards">
+      <div class="project-card project-3d" tabindex="0">
+        <div class="project-tilt project-glow">
+          <h3>AI-Assisted Portfolio Website</h3>
+          <p>Designed and developed a personal portfolio site using AI tools and custom code, showcasing interactive design and advanced animations.</p>
+        </div>
+      </div>
+      <div class="project-card project-3d" tabindex="0">
+        <div class="project-tilt project-glow">
+          <h3>AI-Augmented App Development</h3>
+          <p>Created web and mobile apps with integrated AI features, including chatbots and smart recommendations, for personal and client projects.</p>
+        </div>
+      </div>
+      <div class="project-card project-3d" tabindex="0">
+        <div class="project-tilt project-glow">
+          <h3>Interactive AI Games</h3>
+          <p>Developed engaging games powered by AI logic and real-time feedback, demonstrating creative and technical skills.</p>
+        </div>
+      </div>
+      <div class="project-card project-3d" tabindex="0">
+        <div class="project-tilt project-glow">
+          <h3>Client AI Solutions (Coming Soon)</h3>
+          <p>Planning to offer AI-augmented website and app development services for clients, blending innovation with business intelligence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS & TOOLS SECTION -->
+  <section class="skills skills-animate" id="skills">
+    <h2>Skills & Tools</h2>
+    <div class="skills-list-visual">
+      <div class="skill-item">
+        <span class="skill-icon">🐍</span>
+        <span class="skill-name">Python</span>
+        <div class="skill-bar" data-skill="90"></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">💻</span>
+        <span class="skill-name">C++</span>
+        <div class="skill-bar" data-skill="80"></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">🟨</span>
+        <span class="skill-name">JavaScript</span>
+        <div class="skill-bar" data-skill="85"></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">🤖</span>
+        <span class="skill-name">cursor.ai</span>
+        <div class="skill-bar" data-skill="75"></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">🧩</span>
+        <span class="skill-name">Scratch</span>
+        <div class="skill-bar" data-skill="70"></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">🚗</span>
+        <span class="skill-name">ROS</span>
+        <div class="skill-bar" data-skill="60"></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">📊</span>
+        <span class="skill-name">MATLAB/Simulink</span>
+        <div class="skill-bar" data-skill="65"></div>
+      </div>
+      <div class="skill-item">
+        <span class="skill-icon">🚌</span>
+        <span class="skill-name">CAN bus</span>
+        <div class="skill-bar" data-skill="55"></div>
+      </div>
+    </div>
+  </section>
+  <!-- DATA ANALYSIS SECTION -->
+  <section class="data-analysis data-animate" id="data-analysis">
+    <h2><span class="data-icon">📊</span> Data Analysis</h2>
+    <div class="data-analysis-content">
+      <p>
+        I have a strong interest in data analysis, leveraging tools like <strong>Python (Pandas, NumPy, Matplotlib)</strong>, <strong>Excel</strong>, and <strong>Google Data Studio</strong> to extract insights from complex datasets. My experience includes analyzing automobile sensor data, visualizing trends in AI model performance, and presenting actionable insights for school projects and personal research. I enjoy transforming raw data into compelling stories and using analytics to drive smarter decisions in both technology and business.
+      </p>
+      <ul class="data-analysis-tools">
+        <li>Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
+        <li>Excel & Google Sheets</li>
+        <li>Google Data Studio</li>
+        <li>Data Visualization</li>
+        <li>Statistical Analysis</li>
+        <li>Automobile Sensor Data</li>
+        <li>AI Model Evaluation</li>
+      </ul>
+      <div class="data-graphs">
+        <canvas id="barChart" width="400" height="220"></canvas>
+        <canvas id="lineChart" width="400" height="220"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION & EXPERIENCE SECTION -->
+  <section class="education education-animate" id="education">
+    <h2>Education & Experience</h2>
+    <ul class="education-list">
+      <li><strong>12th Grade Student</strong> – Caliph Life School (2024–Present)</li>
+      <li><strong>Alumni</strong> – ISB Bahrain</li>
+      <li><strong>Awards:</strong> School Presentations, Interschool Arts, Management Fests</li>
+      <li><strong>Certifications:</strong> Actively pursuing AI and Automobile Technology certifications</li>
+    </ul>
+  </section>
+
+  <!-- PASSIONS SECTION -->
+  <section class="passions passions-animate" id="passions">
+    <h2>Passions</h2>
+    <div class="passion-list">
+      <div class="passion-item">
+        <span class="passion-icon">🎥</span>
+        <span class="passion-label">Video Creation</span>
+      </div>
+      <div class="passion-item">
+        <span class="passion-icon">📸</span>
+        <span class="passion-label">Photography</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <footer class="contact contact-animate" id="contact">
+    <h2>Contact</h2>
+    <form class="contact-form">
+      <div class="form-group">
+        <input type="text" id="name" name="name" required />
+        <label for="name">Name</label>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" required />
+        <label for="email">Email</label>
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" required></textarea>
+        <label for="message">Message</label>
+      </div>
+      <button type="submit" class="btn-glow">Send Message</button>
+    </form>
+    <div class="footer-links">
+      <a href="mailto:hadimuhammed185@gmail.com" class="footer-icon" title="Email" target="_blank">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4.5A2.5 2.5 0 014.5 2h15A2.5 2.5 0 0122 4.5v15a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 19.5v-15z" stroke="#00E5FF" stroke-width="2"/><path d="M3.5 5.5L12 13l8.5-7.5" stroke="#2962FF" stroke-width="2"/></svg>
+      </a>
+      <a href="https://instagram.com/hadi____130" class="footer-icon" title="Instagram" target="_blank">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#00E5FF" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="#2962FF" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="#2962FF"/></svg>
+      </a>
+      <a href="https://threads.net/@hadi____130" class="footer-icon" title="Threads" target="_blank">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#00E5FF" stroke-width="2"/><path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="#2962FF" stroke-width="2"/></svg>
+      </a>
+      <a href="https://wa.me/97339133636" class="footer-icon" title="WhatsApp" target="_blank">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#00E5FF" stroke-width="2"/><path d="M7 17l2-2c.2-.2.5-.2.7 0l1.3 1.3c.2.2.5.2.7 0l3.3-3.3c.2-.2.2-.5 0-.7l-1.3-1.3c-.2-.2-.2-.5 0-.7l2-2" stroke="#2962FF" stroke-width="2"/></svg>
+      </a>
+    </div>
+    <p class="footer-credit">&copy; 2025 Hadi Muhammed. All rights reserved.</p>
+  </footer>
+  <!-- Illuminated H Logo -->
+  <div class="corner-logo complex-logo" aria-label="Hadi Muhammed Logo">
+    <svg class="logo-svg" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#2962FF" stop-opacity="0.3"/>
+        </radialGradient>
+        <linearGradient id="hgrad" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#00E5FF"/>
+          <stop offset="1" stop-color="#2962FF"/>
+        </linearGradient>
+      </defs>
+      <circle cx="35" cy="35" r="32" stroke="url(#glow)" stroke-width="5" fill="none"/>
+      <g filter="url(#shadow)">
+        <path d="M22 50V20M22 35H48M48 20V50" stroke="url(#hgrad)" stroke-width="6" stroke-linecap="round"/>
+        <!-- Circuit/AI motif: dots and lines -->
+        <circle cx="22" cy="20" r="3" fill="#00E5FF"/>
+        <circle cx="48" cy="20" r="3" fill="#00E5FF"/>
+        <circle cx="22" cy="50" r="3" fill="#2962FF"/>
+        <circle cx="48" cy="50" r="3" fill="#2962FF"/>
+        <circle cx="35" cy="35" r="2.5" fill="#fff"/>
+      </g>
+      <filter id="shadow" x="0" y="0" width="70" height="70" filterUnits="userSpaceOnUse">
+        <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#00E5FF"/>
+      </filter>
+    </svg>
+    <span class="logo-h-text">H</span>
+  </div>
+
+  <div class="profile-picture">
+    <img src="profile.jpg" alt="Hadi Muhammed giving a speech">
+  </div>
+</body>
+</html> 
