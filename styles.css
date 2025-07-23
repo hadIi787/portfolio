@@ -1210,7 +1210,6 @@ body.light-mode .nav-tabs button.nav-tab:focus {
 .profile-picture {
   position: fixed;
   bottom: 2vw;
-  left: calc(2vw + 85px); /* Positioned next to the 70px logo + 15px gap */
   z-index: 300;
   width: 90px;
   height: 90px;
