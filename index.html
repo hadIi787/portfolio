@@ -35,15 +35,15 @@
   <div class="floating-keywords"></div>
 
   <!-- NAVIGATION TABS -->
-  <nav class="nav-tabs premium-nav">
-    <button class="nav-tab" data-tab="hero"><span class="nav-icon">🏠</span> Home</button>
-    <button class="nav-tab" data-tab="about"><span class="nav-icon">👤</span> About</button>
-    <button class="nav-tab" data-tab="projects"><span class="nav-icon">💡</span> Projects</button>
-    <button class="nav-tab" data-tab="skills"><span class="nav-icon">🛠️</span> Skills</button>
-    <button class="nav-tab" data-tab="data-analysis"><span class="nav-icon">📊</span> Data Analysis</button>
-    <button class="nav-tab" data-tab="education"><span class="nav-icon">🎓</span> Education</button>
-    <button class="nav-tab" data-tab="passions"><span class="nav-icon">🎥</span> Passions</button>
-    <button class="nav-tab" data-tab="contact"><span class="nav-icon">✉️</span> Contact</button>
+  <nav class="nav-tabs premium-nav" aria-label="Primary navigation">
+    <button class="nav-tab" data-tab="hero" aria-controls="hero" aria-selected="true"><span class="nav-icon" aria-hidden="true">🏠</span> Home</button>
+    <button class="nav-tab" data-tab="about" aria-controls="about"><span class="nav-icon" aria-hidden="true">👤</span> About</button>
+    <button class="nav-tab" data-tab="projects" aria-controls="projects"><span class="nav-icon" aria-hidden="true">💡</span> Projects</button>
+    <button class="nav-tab" data-tab="skills" aria-controls="skills"><span class="nav-icon" aria-hidden="true">🛠️</span> Skills</button>
+    <button class="nav-tab" data-tab="data-analysis" aria-controls="data-analysis"><span class="nav-icon" aria-hidden="true">📊</span> Data Analysis</button>
+    <button class="nav-tab" data-tab="education" aria-controls="education"><span class="nav-icon" aria-hidden="true">🎓</span> Education</button>
+    <button class="nav-tab" data-tab="passions" aria-controls="passions"><span class="nav-icon" aria-hidden="true">🎥</span> Passions</button>
+    <button class="nav-tab" data-tab="contact" aria-controls="contact"><span class="nav-icon" aria-hidden="true">✉️</span> Contact</button>
   </nav>
 
   <!-- Dark/Light mode toggle -->
@@ -52,32 +52,32 @@
   </button>
 
   <!-- HERO SECTION -->
-  <header class="hero" id="hero">
+  <header class="hero" id="hero" role="region" aria-label="Home section">
     <div class="hero-content hero-animate">
       <h1 class="hero-title illuminated-text">HADI MUHAMMED</h1>
       <h2 class="hero-subtitle">Junior AI Engineer & 12th Grade Student</h2>
       <p class="hero-tagline">Driving the future: Innovating in Automotive AI & Business Intelligence</p>
-      <div class="hero-contacts">
-        <a href="mailto:hadimuhammed185@gmail.com" class="contact-icon email" title="Email" target="_blank" rel="noopener noreferrer">
+      <div class="hero-contacts" role="list">
+        <a href="mailto:hadimuhammed185@gmail.com" class="contact-icon email" title="Email" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Email">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M2 4.5A2.5 2.5 0 014.5 2h15A2.5 2.5 0 0122 4.5v15a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 19.5v-15z" stroke="#00E5FF" stroke-width="2"/>
             <path d="M3.5 5.5L12 13l8.5-7.5" stroke="#2962FF" stroke-width="2"/>
           </svg>
         </a>
-        <a href="https://instagram.com/hadi____130" class="contact-icon instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
+        <a href="https://instagram.com/hadi____130" class="contact-icon instagram" title="Instagram" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Instagram">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="2" y="2" width="20" height="20" rx="6" stroke="#00E5FF" stroke-width="2"/>
             <circle cx="12" cy="12" r="5" stroke="#2962FF" stroke-width="2"/>
             <circle cx="17.5" cy="6.5" r="1.5" fill="#2962FF"/>
           </svg>
         </a>
-        <a href="https://threads.net/@hadi____130" class="contact-icon threads" title="Threads" target="_blank" rel="noopener noreferrer">
+        <a href="https://threads.net/@hadi____130" class="contact-icon threads" title="Threads" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Threads">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="12" cy="12" r="10" stroke="#00E5FF" stroke-width="2"/>
             <path d="M8 12c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4" stroke="#2962FF" stroke-width="2"/>
           </svg>
         </a>
-        <a href="https://wa.me/97339133636" class="contact-icon whatsapp" title="WhatsApp" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/97339133636" class="contact-icon whatsapp" title="WhatsApp" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="WhatsApp">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="2" y="2" width="20" height="20" rx="6" stroke="#00E5FF" stroke-width="2"/>
             <path d="M7 17l2-2c.2-.2.5-.2.7 0l1.3 1.3c.2.2.5.2.7 0l3.3-3.3c.2-.2.2-.5 0-.7l-1.3-1.3c-.2-.2-.2-.5 0-.7l2-2" stroke="#2962FF" stroke-width="2"/>
@@ -88,7 +88,7 @@
   </header>
 
   <!-- ABOUT ME SECTION -->
-  <section class="about about-animate" id="about">
+  <section class="about about-animate" id="about" role="region" aria-label="About Me">
     <h2>About Me</h2>
     <p class="about-font">
       I’m a passionate 12th-grade student at <strong>Caliph Life School (2024–Present)</strong> and an <strong>ISB Bahrain alumni</strong>. As a Junior AI Engineer, I am deeply fascinated by the intersection of artificial intelligence, automobile technology, and business intelligence. My journey began with a curiosity for how machines think and evolved into a mission to build intelligence into vehicles and business systems. I aspire to earn a professional degree in automobile engineering, a master’s in AI, and an MBA from the Indian Institute of Management. <br /><br />
@@ -97,38 +97,38 @@
   </section>
 
   <!-- KEY PROJECTS SECTION -->
-  <section class="projects projects-animate" id="projects">
+  <section class="projects projects-animate" id="projects" role="region" aria-label="Key Projects">
     <h2>Key Projects</h2>
     <div class="project-cards">
-      <div class="project-card project-3d" tabindex="0">
+      <article class="project-card project-3d" tabindex="0" role="group" aria-label="AI-Assisted Portfolio Website project">
         <div class="project-tilt project-glow">
           <h3>AI-Assisted Portfolio Website</h3>
           <p>Designed and developed a personal portfolio site using AI tools and custom code, showcasing interactive design and advanced animations.</p>
         </div>
-      </div>
-      <div class="project-card project-3d" tabindex="0">
+      </article>
+      <article class="project-card project-3d" tabindex="0" role="group" aria-label="AI-Augmented App Development project">
         <div class="project-tilt project-glow">
           <h3>AI-Augmented App Development</h3>
           <p>Created web and mobile apps with integrated AI features, including chatbots and smart recommendations, for personal and client projects.</p>
         </div>
-      </div>
-      <div class="project-card project-3d" tabindex="0">
+      </article>
+      <article class="project-card project-3d" tabindex="0" role="group" aria-label="Interactive AI Games project">
         <div class="project-tilt project-glow">
           <h3>Interactive AI Games</h3>
           <p>Developed engaging games powered by AI logic and real-time feedback, demonstrating creative and technical skills.</p>
         </div>
-      </div>
-      <div class="project-card project-3d" tabindex="0">
+      </article>
+      <article class="project-card project-3d" tabindex="0" role="group" aria-label="Client AI Solutions project coming soon">
         <div class="project-tilt project-glow">
           <h3>Client AI Solutions (Coming Soon)</h3>
           <p>Planning to offer AI-augmented website and app development services for clients, blending innovation with business intelligence.</p>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
   <!-- SKILLS & TOOLS SECTION -->
-  <section class="skills skills-animate" id="skills">
+  <section class="skills skills-animate" id="skills" role="region" aria-label="Skills and Tools">
     <h2>Skills & Tools</h2>
     <ul class="skills-list">
       <li>Artificial Intelligence (AI) & Machine Learning (ML)</li>
@@ -141,13 +141,13 @@
   </section>
 
   <!-- DATA ANALYSIS SECTION -->
-  <section class="data-analysis data-analysis-animate" id="data-analysis">
+  <section class="data-analysis data-analysis-animate" id="data-analysis" role="region" aria-label="Data Analysis and Insights">
     <h2>Data Analysis & Insights</h2>
     <p>Utilizing AI and business intelligence techniques to analyze automotive industry trends and user data for actionable insights.</p>
   </section>
 
   <!-- EDUCATION SECTION -->
-  <section class="education education-animate" id="education">
+  <section class="education education-animate" id="education" role="region" aria-label="Education">
     <h2>Education</h2>
     <ul>
       <li>Caliph Life School, 2024–Present</li>
@@ -156,13 +156,13 @@
   </section>
 
   <!-- PASSIONS SECTION -->
-  <section class="passions passions-animate" id="passions">
+  <section class="passions passions-animate" id="passions" role="region" aria-label="Passions and Hobbies">
     <h2>Passions & Hobbies</h2>
     <p>Photography, Videography, Exploring AI Innovations, Automotive Engineering, Creative Coding</p>
   </section>
 
   <!-- CONTACT SECTION -->
-  <section class="contact contact-animate" id="contact">
+  <section class="contact contact-animate" id="contact" role="region" aria-label="Contact Me">
     <h2>Contact Me</h2>
     <p>Email: <a href="mailto:hadimuhammed185@gmail.com">hadimuhammed185@gmail.com</a></p>
     <p>Instagram: <a href="https://instagram.com/hadi____130" target="_blank" rel="noopener noreferrer">@hadi____130</a></p>
@@ -170,10 +170,8 @@
     <p>WhatsApp: <a href="https://wa.me/97339133636" target="_blank" rel="noopener noreferrer">+973 3913 3636</a></p>
   </section>
 
-<nav class="nav-tabs premium-nav">
-  <!-- nav buttons here -->
-</nav>
-<img src="images/hadi-profile.jpg" alt="Hadi Profile" style="display:block; margin:10px 0 20px 10px; width:120px; border-radius:8px; box-shadow:0 0 8px rgba(0,0,0,0.3);" />
+  <!-- Bottom-left fixed profile image -->
+ <img src="images/hadi-profile.jpg" alt="Hadi Muhammed Profile Picture" class="top-left-logo" />
 
 </body>
 </html>
