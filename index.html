@@ -12,25 +12,12 @@
   <script defer src="script.js"></script>
 
   <style>
-    /* Existing fixed bottom-left image style */
-    .bottom-left-logo {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 80px;
-      height: auto;
-      z-index: 9999;
-      margin: 10px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.3);
-    }
-
-    /* NEW: Top-left profile image under nav tabs */
+    /* Profile image at top-left below nav */
     .top-left-profile {
       position: absolute;
-      top: 60px; /* space below nav */
+      top: 70px;
       left: 20px;
-      width: 100px;
+      width: 90px;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -39,9 +26,9 @@
 
     @media (max-width: 768px) {
       .top-left-profile {
-        width: 70px;
-        top: 80px;
-        left: 10px;
+        width: 65px;
+        top: 85px;
+        left: 12px;
       }
     }
   </style>
@@ -64,8 +51,8 @@
     <button class="nav-tab" data-tab="contact"><span class="nav-icon">✉️</span> Contact</button>
   </nav>
 
-  <!-- Profile image just below nav tabs (top-left corner) -->
-  <img src="images/hadi-profile.jpg" alt="Hadi Profile Picture" class="top-left-profile" />
+  <!-- Profile image (top-left, below nav) -->
+  <img src="images/hadiprofile.jpg" alt="Hadi Profile Picture" class="top-left-profile" />
 
   <!-- Dark/Light mode toggle -->
   <button class="mode-toggle" aria-label="Toggle dark/light mode">
@@ -75,24 +62,14 @@
   <!-- HERO SECTION -->
   <header class="hero" id="hero">
     <div class="hero-content hero-animate">
-      <h1 class="hero-title illuminated-text">
-        HADI MUHAMMED
-      </h1>
+      <h1 class="hero-title illuminated-text">HADI MUHAMMED</h1>
       <h2 class="hero-subtitle">Junior AI Engineer & 12th Grade Student</h2>
       <p class="hero-tagline">Driving the future: Innovating in Automotive AI & Business Intelligence</p>
       <div class="hero-contacts">
-        <a href="mailto:hadimuhammed185@gmail.com" class="contact-icon email" title="Email" target="_blank">
-          <!-- SVG email icon -->
-        </a>
-        <a href="https://instagram.com/hadi____130" class="contact-icon instagram" title="Instagram" target="_blank">
-          <!-- SVG Instagram icon -->
-        </a>
-        <a href="https://threads.net/@hadi____130" class="contact-icon threads" title="Threads" target="_blank">
-          <!-- SVG Threads icon -->
-        </a>
-        <a href="https://wa.me/97339133636" class="contact-icon whatsapp" title="WhatsApp" target="_blank">
-          <!-- SVG WhatsApp icon -->
-        </a>
+        <a href="mailto:hadimuhammed185@gmail.com" class="contact-icon email" title="Email" target="_blank"></a>
+        <a href="https://instagram.com/hadi____130" class="contact-icon instagram" title="Instagram" target="_blank"></a>
+        <a href="https://threads.net/@hadi____130" class="contact-icon threads" title="Threads" target="_blank"></a>
+        <a href="https://wa.me/97339133636" class="contact-icon whatsapp" title="WhatsApp" target="_blank"></a>
       </div>
     </div>
   </header>
@@ -109,7 +86,7 @@
   <section class="projects projects-animate" id="projects">
     <h2>Key Projects</h2>
     <div class="project-cards">
-      <!-- Your project cards here -->
+      <!-- Your projects -->
     </div>
   </section>
 
@@ -155,8 +132,5 @@
     <p>Threads: <a href="https://threads.net/@hadi____130" target="_blank">@hadi____130</a></p>
     <p>WhatsApp: <a href="https://wa.me/97339133636" target="_blank">+973 3913 3636</a></p>
   </section>
-
-  <!-- Bottom-left logo (optional second image) -->
-  <img src="images/hadi-profile.jpg" alt="Hadi Profile" class="bottom-left-logo" />
 </body>
 </html>
