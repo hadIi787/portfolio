@@ -44,6 +44,20 @@
       height: 70px;
     }
   }
+.mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 15px;
+  z-index: 1001;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .mode-toggle {
+    top: 18px;
+    right: 25px; /* Move it further right on mobile */
+  }
+}
 </style>
 </head>
 <body>
