@@ -11,6 +11,33 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
 <style>
+  .top-left-image {
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px 0 0 12px;
+    z-index: 999;
+  }
+
+  .top-left-image img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid #00E5FF;
+    object-fit: cover;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+  }
+
+  /* Optional: Slight tweak for larger screens */
+  @media (min-width: 768px) {
+    .top-left-image {
+      padding-left: 24px;
+    }
+
+    .top-left-image img {
+      width: 60px;
+      height: 60px;
+    }
+  }
   /* === Profile Image Below Navigation === */
   .top-left-image {
     position: relative;
@@ -40,6 +67,9 @@
   <div class="floating-keywords"></div>
   <!-- NAVIGATION TABS -->
   <nav class="nav-tabs premium-nav">
+<div class="top-left-image">
+  <img src="hadiprofile.jpg" alt="Hadi Profile Picture">
+</div>
     <button class="nav-tab" data-tab="hero"><span class="nav-icon">🏠</span> Home</button>
     <button class="nav-tab" data-tab="about"><span class="nav-icon">👤</span> About</button>
     <button class="nav-tab" data-tab="projects"><span class="nav-icon">💡</span> Projects</button>
