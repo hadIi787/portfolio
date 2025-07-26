@@ -10,6 +10,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
+<style>
+  /* === Profile Image Below Navigation === */
+  .top-left-image {
+    position: relative;
+    margin: 10px 0 0 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid cyan;
+    z-index: 998;
+  }
+
+  .top-left-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>
 </head>
 <body>
   <canvas id="three-bg"></canvas>
@@ -29,8 +49,10 @@
     <button class="nav-tab" data-tab="passions"><span class="nav-icon">🎥</span> Passions</button>
     <button class="nav-tab" data-tab="contact"><span class="nav-icon">✉️</span> Contact</button>
   </nav>
-
-  <!-- Dark/Light mode toggle -->
+<div class="top-left-image">
+  <img src="hadiprofile.jpg" alt="Hadi Profile Picture">
+</div>
+<!-- Dark/Light mode toggle -->
   <button class="mode-toggle" aria-label="Toggle dark/light mode">
     <span class="gear"></span>
   </button>
