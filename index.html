@@ -11,152 +11,205 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
 <style>
-@media (max-width: 600px) {
+>
+  /* ========== BASE STYLES ========== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    font-family: 'Orbitron', 'Share Tech Mono', 'Roboto Mono', Arial, sans-serif;
+    background: #0B0F1A;
+    color: #00E5FF;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    cursor: none;
+  }
+
+  /* ========== NAVIGATION BAR ========== */
   .nav-tabs {
-    width: 100%;
-    overflow-x: auto;
-  }
-
-  .nav-tab {
-    flex: 0 0 auto; /* prevents shrinking */
-  }
-}
-.nav-tabs {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  white-space: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 8px 12px;
-  gap: 10px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  scrollbar-width: none; /* for Firefox */
-  -ms-overflow-style: none; /* for IE/Edge */
-}
-
-.nav-tabs::-webkit-scrollbar {
-  display: none; /* for Chrome, Safari */
-}
-
-.nav-tab {
-  display: inline-block;
-  background-color: #001F3F;
-  color: #00E5FF;
-  border: 1px solid #00E5FF;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.nav-tab:hover {
-  background-color: #00E5FF;
-  color: #001F3F;
-}
-
-  .nav-tab {
-    width: 100%;
-    text-align: center;
-  }
-.nav-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 12px;
-  background-color: rgba(0, 0, 0, 0.4); /* optional backdrop */
-  border-radius: 12px;
-  z-index: 999;
-}
-
-.nav-tab {
-  background-color: #001F3F;
-  color: #00E5FF;
-  border: 1px solid #00E5FF;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.nav-tab:hover {
-  background-color: #00E5FF;
-  color: #001F3F;
-}
-  .top-left-image {
     display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
     justify-content: flex-start;
-    padding: 8px 0 0 12px;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 10px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    position: relative;
+    z-index: 99;
+  }
+
+  .nav-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+
+  .nav-tab {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #001F3F;
+    color: #00E5FF;
+    border: 1px solid #00E5FF;
+    border-radius: 6px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .nav-tab:hover {
+    background-color: #00E5FF;
+    color: #001F3F;
+  }
+
+  /* ========== PROFILE IMAGE ========== */
+  .top-left-image {
+    position: absolute;
+    top: 10px;
+    left: 10px;
     z-index: 999;
   }
 
   .top-left-image img {
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     border: 2px solid #00E5FF;
     object-fit: cover;
     box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
   }
 
-  /* Optional: Slight tweak for larger screens */
-  @media (min-width: 768px) {
-    .top-left-image {
-      padding-left: 24px;
-    }
-
-    .top-left-image img {
-      width: 60px;
-      height: 60px;
-    }
+  /* ========== HERO SECTION ========== */
+  .hero {
+    padding: 80px 16px 40px;
+    text-align: center;
   }
-  /* === Profile Image Below Navigation === */
-  .top-left-image {
+
+  .hero-title {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: #12a5cc;
+    text-shadow: 0 0 8px #00e5ff, 0 0 16px #00e5ff, 0 0 32px #fff;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-top: 8px;
+    font-weight: 600;
+    color: #ccc;
+  }
+
+  .hero-tagline {
+    font-size: 0.95rem;
+    margin-top: 12px;
+    color: #80f8ff;
+  }
+
+  /* ========== SECTION LAYOUTS ========== */
+  section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    color: #00E5FF;
+    margin-bottom: 12px;
+  }
+
+  .section-content {
+    background: rgba(0, 0, 40, 0.6);
+    padding: 18px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  /* ========== ICONS UNDER HERO ========== */
+  .hero-contacts {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .hero-contacts i,
+  .hero-contacts img {
+    font-size: 1.2rem;
+    color: #00E5FF;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .hero-contacts i:hover,
+  .hero-contacts img:hover {
+    transform: scale(1.15);
+  }
+
+  /* ========== DARK GLOW EFFECTS (OPTIONAL) ========== */
+  .btn-glow {
+    box-shadow: 0 0 8px #00E5FF, 0 0 16px #00E5FF;
+  }
+
+  /* ========== BACKGROUND CANVAS Z-INDEX FIX ========== */
+  canvas,
+  .background-animated,
+  .floating-keywords {
+    position: absolute;
+    z-index: 0;
+  }
+
+  nav,
+  header,
+  section,
+  footer {
     position: relative;
-    margin: 10px 0 0 10px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid cyan;
-    z-index: 998;
+    z-index: 10;
   }
 
-  .top-left-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  /* ========== MEDIA QUERIES ========== */
+  @media (max-width: 600px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.85rem;
+    }
   }
 </style>
-</head>
-<body>
-  <canvas id="three-bg"></canvas>
-  <!-- Three.js 3D transitions will be rendered here -->
-  <canvas id="bg-particles"></canvas>
-  <!-- Animated digital data streams background -->
-  <div class="background-animated"></div>
-  <div class="floating-keywords"></div>
-  <!-- NAVIGATION TABS -->
-  <nav class="nav-tabs premium-nav">
-
-    <button class="nav-tab" data-tab="hero"><span class="nav-icon">🏠</span> Home</button>
-    <button class="nav-tab" data-tab="about"><span class="nav-icon">👤</span> About</button>
-    <button class="nav-tab" data-tab="projects"><span class="nav-icon">💡</span> Projects</button>
-    <button class="nav-tab" data-tab="skills"><span class="nav-icon">🛠️</span> Skills</button>
-    <button class="nav-tab" data-tab="data-analysis"><span class="nav-icon">📊</span> Data Analysis</button>
-    <button class="nav-tab" data-tab="education"><span class="nav-icon">🎓</span> Education</button>
-    <button class="nav-tab" data-tab="passions"><span class="nav-icon">🎥</span> Passions</button>
-    <button class="nav-tab" data-tab="contact"><span class="nav-icon">✉️</span> Contact</button>
-  </nav>
+<nav class="nav-tabs">
+  <div class="top-left-image">
+    <img src="hadiprofile.jpg" alt="Hadi Profile Picture" />
+  </div>
+  <button class="nav-tab" data-tab="hero">🏠 Home</button>
+  <button class="nav-tab" data-tab="about">👤 About</button>
+  <button class="nav-tab" data-tab="projects">💡 Projects</button>
+  <button class="nav-tab" data-tab="skills">🛠️ Skills</button>
+  <button class="nav-tab" data-tab="data-analysis">📊 Data Analysis</button>
+  <button class="nav-tab" data-tab="education">🎓 Education</button>
+  <button class="nav-tab" data-tab="passions">🎥 Passions</button>
+  <button class="nav-tab" data-tab="contact">✉️ Contact</button>
+</nav>
 <!-- Dark/Light mode toggle -->
   <button class="mode-toggle" aria-label="Toggle dark/light mode">
     <span class="gear"></span>
