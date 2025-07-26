@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="UTF-8" />
@@ -55,22 +55,55 @@
   <div class="floating-keywords"></div>
   <!-- NAVIGATION TABS -->
   <nav class="nav-tabs premium-nav">
+<!-- Profile Picture (Top-Left Glow) -->
+<div class="profile-glow-wrapper">
+  <img src="hadiprofile.jpg" alt="Hadi Profile Picture" class="profile-picture-glow" />
+</div>
 <style>
+/* Profile Image Styling */
+.profile-glow-wrapper {
+  position: fixed;
+  top: 70px;
+  left: 10px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #00e5ff 30%, transparent 70%);
   border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  padding: 3px;
+  z-index: 1000;
+}
+
+.profile-picture-glow {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px #00e5ff;
+}
+
+/* Responsive: Mobile Navbar and Image */
+@media (max-width: 768px) {
+  .nav-tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 5px;
   }
 
-  @media (max-width: 768px) {
-    .profile-glow-wrapper {
-      top: 120px;
-      left: 10px;
-      width: 60px;
-      height: 60px;
-    }
+  .nav-tab {
+    font-size: 12px;
+    padding: 4px 8px;
+    margin: 4px;
   }
+
+  .profile-glow-wrapper {
+    top: 120px;
+    left: 10px;
+    width: 65px;
+    height: 65px;
+  }
+}
 </style>
-
 <div class="profile-glow-wrapper">
   <img src="hadiprofile.jpg" alt="Hadi Profile" class="profile-picture-glow" />
 </div>
