@@ -11,25 +11,34 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
 <style>
-  .profile-picture-fixed {
+  .profile-glow-wrapper {
     position: fixed;
-    top: 70px;   /* adjust depending on nav height */
+    top: 72px;
     left: 15px;
-    width: 85px;
-    height: 85px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: radial-gradient(circle, #00e5ff 40%, transparent 70%);
+    padding: 5px;
+    box-shadow: 0 0 15px #00e5ff;
     z-index: 1000;
   }
 
+  .profile-picture-glow {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
   @media (max-width: 768px) {
-    .profile-picture-fixed {
+    .profile-glow-wrapper {
       top: 90px;
       left: 12px;
-      width: 65px;
-      height: 65px;
+      width: 70px;
+      height: 70px;
     }
   }
 </style>
@@ -43,7 +52,9 @@
   <div class="floating-keywords"></div>
   <!-- NAVIGATION TABS -->
   <nav class="nav-tabs premium-nav">
-<img src="hadiprofile.jpg" alt="Hadi Profile Picture" class="profile-picture-fixed" />
+<div class="profile-glow-wrapper">
+  <img src="hadiprofile.jpg" alt="Hadi Profile" class="profile-picture-glow" />
+</div>
     <button class="nav-tab" data-tab="hero"><span class="nav-icon">🏠</span> Home</button>
     <button class="nav-tab" data-tab="about"><span class="nav-icon">👤</span> About</button>
     <button class="nav-tab" data-tab="projects"><span class="nav-icon">💡</span> Projects</button>
