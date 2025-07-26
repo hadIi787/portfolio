@@ -11,27 +11,28 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
 
-  <style>
-    /* Profile image at top-left below nav */
-    .top-left-profile {
-      position: absolute;
-      top: 70px;
-      left: 20px;
-      width: 90px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
-    }
+ <style>
+  /* Profile image at top-left below nav */
+  .top-left-profile {
+    position: fixed;
+    top: 60px; /* Adjust depending on nav height */
+    left: 10px;
+    width: 85px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    border: 2px solid white;
+  }
 
-    @media (max-width: 768px) {
-      .top-left-profile {
-        width: 65px;
-        top: 85px;
-        left: 12px;
-      }
+  @media (max-width: 768px) {
+    .top-left-profile {
+      top: 80px;
+      left: 10px;
+      width: 65px;
     }
-  </style>
+  }
+</style>
 </head>
 <body>
   <canvas id="three-bg"></canvas>
