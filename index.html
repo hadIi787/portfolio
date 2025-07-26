@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
   <title>Hadi Muhammed | Junior AI Engineer Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,207 +10,97 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
-<style>
->
-  /* ========== BASE STYLES ========== */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html, body {
-    height: 100%;
-    font-family: 'Orbitron', 'Share Tech Mono', 'Roboto Mono', Arial, sans-serif;
-    background: #0B0F1A;
-    color: #00E5FF;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-
-  body {
-    cursor: none;
-  }
-
-  /* ========== NAVIGATION BAR ========== */
-  .nav-tabs {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 8px 12px;
-    gap: 10px;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
-    position: relative;
-    z-index: 99;
-  }
-
-  .nav-tabs::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
-  }
-
-  .nav-tab {
-    flex: 0 0 auto;
-    padding: 8px 12px;
-    font-size: 0.85rem;
-    font-family: 'Orbitron', sans-serif;
-    background-color: #001F3F;
-    color: #00E5FF;
-    border: 1px solid #00E5FF;
-    border-radius: 6px;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-
-  .nav-tab:hover {
-    background-color: #00E5FF;
-    color: #001F3F;
-  }
-
-  /* ========== PROFILE IMAGE ========== */
-  .top-left-image {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 999;
-  }
-
-  .top-left-image img {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 2px solid #00E5FF;
-    object-fit: cover;
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
-  }
-
-  /* ========== HERO SECTION ========== */
-  .hero {
-    padding: 80px 16px 40px;
-    text-align: center;
-  }
-
-  .hero-title {
-    font-size: 2.4rem;
-    font-weight: 900;
-    color: #12a5cc;
-    text-shadow: 0 0 8px #00e5ff, 0 0 16px #00e5ff, 0 0 32px #fff;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
-    margin-top: 8px;
-    font-weight: 600;
-    color: #ccc;
-  }
-
-  .hero-tagline {
-    font-size: 0.95rem;
-    margin-top: 12px;
-    color: #80f8ff;
-  }
-
-  /* ========== SECTION LAYOUTS ========== */
-  section {
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-    color: #00E5FF;
-    margin-bottom: 12px;
-  }
-
-  .section-content {
-    background: rgba(0, 0, 40, 0.6);
-    padding: 18px;
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    font-family: 'Share Tech Mono', monospace;
-  }
-
-  /* ========== ICONS UNDER HERO ========== */
-  .hero-contacts {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .hero-contacts i,
-  .hero-contacts img {
-    font-size: 1.2rem;
-    color: #00E5FF;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-
-  .hero-contacts i:hover,
-  .hero-contacts img:hover {
-    transform: scale(1.15);
-  }
-
-  /* ========== DARK GLOW EFFECTS (OPTIONAL) ========== */
-  .btn-glow {
-    box-shadow: 0 0 8px #00E5FF, 0 0 16px #00E5FF;
-  }
-
-  /* ========== BACKGROUND CANVAS Z-INDEX FIX ========== */
-  canvas,
-  .background-animated,
-  .floating-keywords {
-    position: absolute;
-    z-index: 0;
-  }
-
-  nav,
-  header,
-  section,
-  footer {
-    position: relative;
-    z-index: 10;
-  }
-
-  /* ========== MEDIA QUERIES ========== */
-  @media (max-width: 600px) {
-    .hero-title {
-      font-size: 2rem;
+ <style>
+    /* NAVIGATION FIXES */
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1001;
+      position: relative;
     }
 
-    .hero-subtitle {
-      font-size: 1rem;
+    .nav-tab {
+      margin: 6px;
+      font-size: 14px;
+      padding: 6px 12px;
+      background: #111;
+      border: 1px solid #00e5ff;
+      border-radius: 8px;
+      color: #00e5ff;
+      cursor: pointer;
     }
 
-    .hero-tagline {
-      font-size: 0.85rem;
+    @media (max-width: 768px) {
+      .nav-tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 8px;
+      }
+
+      .nav-tab {
+        font-size: 12px;
+        padding: 5px 10px;
+        margin: 4px;
+      }
     }
-  }
-</style>
-<nav class="nav-tabs">
-  <div class="top-left-image">
-    <img src="hadiprofile.jpg" alt="Hadi Profile Picture" />
-  </div>
-  <button class="nav-tab" data-tab="hero">🏠 Home</button>
-  <button class="nav-tab" data-tab="about">👤 About</button>
-  <button class="nav-tab" data-tab="projects">💡 Projects</button>
-  <button class="nav-tab" data-tab="skills">🛠️ Skills</button>
-  <button class="nav-tab" data-tab="data-analysis">📊 Data Analysis</button>
-  <button class="nav-tab" data-tab="education">🎓 Education</button>
-  <button class="nav-tab" data-tab="passions">🎥 Passions</button>
-  <button class="nav-tab" data-tab="contact">✉️ Contact</button>
-</nav>
-<!-- Dark/Light mode toggle -->
+
+    /* PROFILE IMAGE FIXES */
+    .profile-glow-wrapper {
+      position: fixed;
+      top: 72px;
+      left: 10px;
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #00e5ff 40%, transparent 70%);
+      padding: 4px;
+      box-shadow: 0 0 15px #00e5ff;
+      z-index: 999;
+    }
+
+    .profile-picture-glow {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .profile-glow-wrapper {
+        top: 120px;
+        left: 10px;
+        width: 60px;
+        height: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="three-bg"></canvas>
+  <!-- Three.js 3D transitions will be rendered here -->
+  <canvas id="bg-particles"></canvas>
+  <!-- Animated digital data streams background -->
+  <div class="background-animated"></div>
+  <div class="floating-keywords"></div>
+  <!-- NAVIGATION TABS -->
+  <nav class="nav-tabs premium-nav">
+    <button class="nav-tab" data-tab="hero"><span class="nav-icon">🏠</span> Home</button>
+    <button class="nav-tab" data-tab="about"><span class="nav-icon">👤</span> About</button>
+    <button class="nav-tab" data-tab="projects"><span class="nav-icon">💡</span> Projects</button>
+    <button class="nav-tab" data-tab="skills"><span class="nav-icon">🛠️</span> Skills</button>
+    <button class="nav-tab" data-tab="data-analysis"><span class="nav-icon">📊</span> Data Analysis</button>
+    <button class="nav-tab" data-tab="education"><span class="nav-icon">🎓</span> Education</button>
+    <button class="nav-tab" data-tab="passions"><span class="nav-icon">🎥</span> Passions</button>
+    <button class="nav-tab" data-tab="contact"><span class="nav-icon">✉️</span> Contact</button>
+  </nav>
+
+  <!-- Dark/Light mode toggle -->
   <button class="mode-toggle" aria-label="Toggle dark/light mode">
     <span class="gear"></span>
   </button>
@@ -410,8 +300,8 @@
     <p class="footer-credit">&copy; 2025 Hadi Muhammed. All rights reserved.</p>
   </footer>
   <!-- Illuminated H Logo -->
-    <div class="profile-picture">
-<img src="hadiprofile.jpg" alt="Hadi Profile Picture" class="top-left-profile" />
-  </div>
+<div class="profile-glow-wrapper">
+  <img src="hadiprofile.jpg" alt="Hadi Profile" class="profile-picture-glow" />
+</div>
 </body>
 </html> 
