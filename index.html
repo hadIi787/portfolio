@@ -13,11 +13,51 @@
 <style>
 @media (max-width: 600px) {
   .nav-tabs {
-    flex-direction: column;
-    align-items: stretch;
     width: 100%;
-    padding: 8px;
+    overflow-x: auto;
   }
+
+  .nav-tab {
+    flex: 0 0 auto; /* prevents shrinking */
+  }
+}
+.nav-tabs {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  white-space: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  scrollbar-width: none; /* for Firefox */
+  -ms-overflow-style: none; /* for IE/Edge */
+}
+
+.nav-tabs::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari */
+}
+
+.nav-tab {
+  display: inline-block;
+  background-color: #001F3F;
+  color: #00E5FF;
+  border: 1px solid #00E5FF;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-tab:hover {
+  background-color: #00E5FF;
+  color: #001F3F;
+}
 
   .nav-tab {
     width: 100%;
