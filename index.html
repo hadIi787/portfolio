@@ -14,7 +14,33 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
 <style>
-<style>
+/* Light Theme Styles */
+body.light-mode {
+  background-color: #f4f4f4;
+  color: #111;
+}
+
+body.light-mode .nav-tabs {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+body.light-mode .nav-tabs a {
+  color: #000;
+  background: #cceeff;
+}
+
+body.light-mode .nav-tabs a:hover {
+  background-color: #00e5ff;
+  color: #000;
+}
+
+body.light-mode .profile-glow-wrapper {
+  box-shadow: 0 0 10px #00bcd4;
+}
+
+body.light-mode .gear {
+  filter: drop-shadow(0 0 5px #00bcd4);
+}
 /* Remove top gap under navbar */
 header.hero {
   padding-top: 0;
@@ -248,11 +274,9 @@ header.hero {
 <div class="nav-profile">
   <img src="hadi-profile.jpg" alt="Hadi Profile" />
 </div>
-</button>  <!-- Dark/Light mode toggle -->
-  <button class="mode-toggle" aria-label="Toggle dark/light mode">
-    <span class="gear"></span>
-  </button>
-
+<button class="mode-toggle" aria-label="Toggle dark/light mode">
+  <span class="gear"></span>
+</button>
   <!-- HERO SECTION -->
   <header class="hero" id="hero">
     <div class="hero-content hero-animate">
@@ -447,5 +471,23 @@ header.hero {
     </div>
     <p class="footer-credit">&copy; 2025 Hadi Muhammed. All rights reserved.</p>
   </footer>
+<script>
+  const toggleButton = document.querySelector('.mode-toggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+
+    // Save user preference
+    const mode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+    localStorage.setItem('theme', mode);
+  });
+
+  // On page load, apply saved theme
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-mode');
+    }
+  });
+</script>
 </body>
 </html> 
