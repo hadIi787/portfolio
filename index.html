@@ -10,6 +10,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
+<style>
+  .profile-picture-fixed {
+    position: fixed;
+    top: 70px;   /* adjust depending on nav height */
+    left: 15px;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+
+  @media (max-width: 768px) {
+    .profile-picture-fixed {
+      top: 90px;
+      left: 12px;
+      width: 65px;
+      height: 65px;
+    }
+  }
+</style>
 </head>
 <body>
   <canvas id="three-bg"></canvas>
@@ -20,7 +43,7 @@
   <div class="floating-keywords"></div>
   <!-- NAVIGATION TABS -->
   <nav class="nav-tabs premium-nav">
-    <img src="hadiprofile.jpg" alt="Hadi Profile" class="top-left-profile" />
+<img src="hadiprofile.jpg" alt="Hadi Profile Picture" class="profile-picture-fixed" />
     <button class="nav-tab" data-tab="hero"><span class="nav-icon">🏠</span> Home</button>
     <button class="nav-tab" data-tab="about"><span class="nav-icon">👤</span> About</button>
     <button class="nav-tab" data-tab="projects"><span class="nav-icon">💡</span> Projects</button>
@@ -230,9 +253,9 @@
     </div>
     <p class="footer-credit">&copy; 2025 Hadi Muhammed. All rights reserved.</p>
   </footer>
-  <!-- Illuminated H Logo -->
-    <div class="profile-picture">
-<img src="hadiprofile.jpg" alt="Hadi Profile Picture" class="top-left-profile" />
+
+  <div class="profile-picture">
+    <img src="profile.jpg" alt="Hadi Muhammed giving a speech">
   </div>
 </body>
 </html> 
