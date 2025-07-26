@@ -102,50 +102,135 @@ header.hero {
   <img src="hadiprofile.jpg" alt="Hadi Profile Picture" class="profile-picture-glow" />
 </div>
 <style>
-/* Profile Image Styling */
-.profile-glow-wrapper {
-  position: fixed;
-  top: 70px;
-  left: 10px;
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle, #00e5ff 30%, transparent 70%);
-  border-radius: 50%;
-  padding: 3px;
-  z-index: 1000;
-}
+    /* Reset styles for consistency */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.profile-picture-glow {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  box-shadow: 0 0 10px #00e5ff;
-}
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: #001F3F;
+      color: white;
+    }
 
-/* Responsive: Mobile Navbar and Image */
-@media (max-width: 768px) {
-  .nav-tabs {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px 5px;
-  }
+    /* NAVIGATION BAR */
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.6);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
 
-  .nav-tab {
-    font-size: 12px;
-    padding: 4px 8px;
-    margin: 4px;
-  }
+    .nav-tabs a {
+      color: white;
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      background: #00e5ff33;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
 
-  .profile-glow-wrapper {
-    top: 120px;
-    left: 10px;
-    width: 65px;
-    height: 65px;
-  }
-}
-</style>
+    .nav-tabs a:hover {
+      background-color: #00e5ff;
+      color: black;
+    }
+
+    /* PROFILE IMAGE - BELOW NAV */
+    .profile-glow-wrapper {
+      position: fixed;
+      top: 70px; /* Below nav */
+      left: 15px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #00e5ff 40%, transparent 70%);
+      padding: 5px;
+      box-shadow: 0 0 15px #00e5ff;
+      z-index: 999;
+    }
+
+    .profile-picture-glow {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    /* DARK/LIGHT TOGGLE */
+    .mode-toggle {
+      position: fixed;
+      top: 75px;
+      right: 15px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .gear {
+      width: 28px;
+      height: 28px;
+      background: url('https://cdn-icons-png.flaticon.com/512/159/159604.png') no-repeat center;
+      background-size: cover;
+      filter: drop-shadow(0 0 5px #00e5ff);
+    }
+
+    /* HERO SECTION */
+    header.hero {
+      margin-top: 160px; /* Give space for nav + profile */
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+      text-shadow: 0 0 10px #00e5ff;
+      font-weight: bold;
+    }
+
+    .hero-subtitle,
+    .hero-tagline {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-tabs {
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        font-size: 0.8rem;
+        padding: 12px;
+      }
+
+      .profile-glow-wrapper {
+        top: 90px;
+        left: 10px;
+        width: 65px;
+        height: 65px;
+      }
+
+      .mode-toggle {
+        top: 95px;
+        right: 15px;
+      }
+
+      .hero-title {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
 <div class="profile-glow-wrapper">
   <img src="hadiprofile.jpg" alt="Hadi Profile" class="profile-picture-glow" />
 </div>
