@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
- <style>
+  <style>
     /* NAVIGATION FIXES */
     .nav-tabs {
       display: flex;
@@ -129,7 +129,22 @@
     html {
       scroll-behavior: smooth;
     }
-    /* Remove duplicate or conflicting fade-in/fade-out styles and scripts */
+    .nav-tab, .btn-glow, .mode-toggle {
+      transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s, filter 0.3s;
+    }
+    .nav-tab:hover, .nav-tab:focus {
+      filter: brightness(1.2) drop-shadow(0 0 8px #00E5FF);
+      background: linear-gradient(90deg, #2962FF 60%, #00E5FF 100%);
+      color: #fff;
+    }
+    .btn-glow:hover, .btn-glow:focus {
+      box-shadow: 0 0 32px 12px #00E5FFcc;
+      background: linear-gradient(90deg, #00E5FF 60%, #2962FF 100%);
+    }
+    .mode-toggle:hover, .mode-toggle:focus {
+      box-shadow: 0 0 16px 4px #00E5FF88;
+      border-color: #2962FF;
+    }
   </style>
 </head>
 <body>
@@ -145,7 +160,6 @@
     <button class="nav-tab" data-tab="about"><span class="nav-icon">👤</span> About</button>
     <button class="nav-tab" data-tab="projects"><span class="nav-icon">💡</span> Projects</button>
     <button class="nav-tab" data-tab="skills"><span class="nav-icon">🛠️</span> Skills</button>
-    <button class="nav-tab" data-tab="data-analysis"><span class="nav-icon">📊</span> Data Analysis</button>
     <button class="nav-tab" data-tab="education"><span class="nav-icon">🎓</span> Education</button>
     <button class="nav-tab" data-tab="passions"><span class="nav-icon">🎥</span> Passions</button>
     <button class="nav-tab" data-tab="contact"><span class="nav-icon">✉️</span> Contact</button>
@@ -270,29 +284,6 @@
       </div>
     </div>
   </section>
-  <!-- DATA ANALYSIS SECTION -->
-  <section class="data-analysis data-animate" id="data-analysis">
-    <h2><span class="data-icon">📊</span> Data Analysis</h2>
-    <div class="data-analysis-content">
-      <p>
-        I have a strong interest in data analysis, leveraging tools like <strong>Python (Pandas, NumPy, Matplotlib)</strong>, <strong>Excel</strong>, and <strong>Google Data Studio</strong> to extract insights from complex datasets. My experience includes analyzing automobile sensor data, visualizing trends in AI model performance, and presenting actionable insights for school projects and personal research. I enjoy transforming raw data into compelling stories and using analytics to drive smarter decisions in both technology and business.
-      </p>
-      <ul class="data-analysis-tools">
-        <li>Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
-        <li>Excel & Google Sheets</li>
-        <li>Google Data Studio</li>
-        <li>Data Visualization</li>
-        <li>Statistical Analysis</li>
-        <li>Automobile Sensor Data</li>
-        <li>AI Model Evaluation</li>
-      </ul>
-      <div class="data-graphs">
-        <canvas id="barChart" width="400" height="220"></canvas>
-        <canvas id="lineChart" width="400" height="220"></canvas>
-      </div>
-    </div>
-  </section>
-
   <!-- EDUCATION & EXPERIENCE SECTION -->
   <section class="education education-animate" id="education">
     <h2>Education & Experience</h2>
