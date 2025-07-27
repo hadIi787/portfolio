@@ -10,7 +10,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
  <style>
+.data-analysis {
+  padding: 60px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.data-analysis canvas {
+  margin-top: 30px;
+  max-width: 90%;
+  box-shadow: 0 0 12px #00e5ff;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+}
     /* NAVIGATION FIXES */
     .nav-tabs {
       display: flex;
@@ -94,7 +108,7 @@
     <button class="nav-tab" data-tab="about"><span class="nav-icon">👤</span> About</button>
     <button class="nav-tab" data-tab="projects"><span class="nav-icon">💡</span> Projects</button>
     <button class="nav-tab" data-tab="skills"><span class="nav-icon">🛠️</span> Skills</button>
-    <button class="nav-tab" data-tab="data-analysis"><span class="nav-icon">📊</span> Data Analysis</button>
+<button class="nav-tab" data-tab="data"><span class="nav-icon">📊</span> Data Analysis</button>
     <button class="nav-tab" data-tab="education"><span class="nav-icon">🎓</span> Education</button>
     <button class="nav-tab" data-tab="passions"><span class="nav-icon">🎥</span> Passions</button>
     <button class="nav-tab" data-tab="contact"><span class="nav-icon">✉️</span> Contact</button>
@@ -210,19 +224,13 @@
       </div>
     </div>
   </section>
-<!-- DATA ANALYSIS SECTION -->
-<section>
- class="data-analysis" id="data-analysis" style="margin: 40px auto; max-width: 600px; background: yellow; border: 6px solid green; border-radius: 16px; box-shadow: 0 4px 24px #00e5ff33; padding: 32px 24px;">
-  <h2 style="text-align:center; color:#00e5ff; margin-bottom: 16px;">Data Analysis</h2>
-  <p style="text-align:center; color:#222; margin-bottom: 24px; font-weight:bold;">
-    DEBUG: This section should always be visible! If it disappears, something is removing or hiding it.
+<section class="data-analysis data-animate" id="data">
+  <h2>Data Analysis</h2>
+  <p class="about-font">
+    Here's a visual representation of my work areas and their completion levels. I believe in using data-driven insights to optimize decisions and maximize performance.
   </p>
-  <p style="text-align:center; color:#222; margin-bottom: 24px;">
-    I analyze data from AI, automotive, and business intelligence projects to extract insights and drive innovation. Here’s a breakdown of my project focus by sector:
-  </p>
-  <canvas id="sectorBarChart" width="500" height="260" style="display:block; margin:0 auto;"></canvas>
+  <canvas id="dataChart" width="600" height="400"></canvas>
 </section>
-
   <!-- EDUCATION & EXPERIENCE SECTION -->
   <section class="education education-animate" id="education">
     <h2>Education & Experience</h2>
@@ -337,5 +345,39 @@
     }
   });
 </script>
+<script>
+  const ctx = document.getElementById('dataChart').getContext('2d');
+  const dataChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['AI Projects', 'Web Dev', 'Data Tasks', 'Graphics', 'Research'],
+      datasets: [{
+        label: 'Completion (%)',
+        data: [90, 85, 70, 75, 60],
+        backgroundColor: ['#00E5FFAA', '#00E5FF88', '#00E5FF66', '#00E5FF55', '#00E5FF44'],
+        borderColor: '#00E5FF',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { labels: { color: '#00E5FF' } }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { color: '#00E5FF' },
+          grid: { color: '#00E5FF33' }
+        },
+        x: {
+          ticks: { color: '#00E5FF' },
+          grid: { color: '#00E5FF33' }
+        }
+      }
+    }
+  });
+</script>
 </body>
 </html>
+
