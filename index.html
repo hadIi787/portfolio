@@ -313,5 +313,47 @@
       });
     });
   </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const barCtx = document.getElementById('barChart').getContext('2d');
+    const lineCtx = document.getElementById('lineChart').getContext('2d');
+
+    new Chart(barCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Python', 'Excel', 'Data Studio', 'AI Models'],
+        datasets: [{
+          label: 'Proficiency (%)',
+          data: [90, 80, 70, 75],
+          backgroundColor: '#00E5FF'
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+
+    new Chart(lineCtx, {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+          label: 'Insights Delivered',
+          data: [2, 5, 3, 6],
+          borderColor: '#2962FF',
+          fill: false,
+          tension: 0.3
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true }
+        }
+      }
+    });
+  });
+</script>
 </body>
 </html>
