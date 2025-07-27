@@ -83,10 +83,10 @@
   <style>
     .mode-toggle {
       position: fixed;
-      top: 65px; /* Just below nav bar */
+      top: 65px;
       right: 24px;
       z-index: 1100;
-      background: #111;
+      background: transparent;
       border: 2px solid #00e5ff;
       border-radius: 50%;
       width: 44px;
@@ -97,13 +97,31 @@
       cursor: pointer;
       box-shadow: 0 2px 8px rgba(0,229,255,0.15);
       transition: background 0.2s, border 0.2s;
+      outline: none;
+    }
+    .mode-toggle:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    .gear-icon {
+      transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+    }
+    .mode-toggle.rotating .gear-icon {
+      transform: rotate(180deg);
     }
     @media (max-width: 768px) {
       .mode-toggle {
-        top: 110px; /* Adjust for mobile nav bar height */
-        right: 12px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
         width: 38px;
         height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   </style>
@@ -129,7 +147,10 @@
 
   <!-- Dark/Light mode toggle -->
   <button class="mode-toggle" aria-label="Toggle dark/light mode">
-    <span class="gear"></span>
+    <svg class="gear-icon" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00e5ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 11 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
   </button>
 
   <!-- HERO SECTION -->
@@ -343,6 +364,17 @@
             }
           }
         });
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const modeToggle = document.querySelector('.mode-toggle');
+      let rotated = false;
+      modeToggle.addEventListener('click', function () {
+        rotated = !rotated;
+        modeToggle.classList.toggle('rotating', rotated);
+        // You can add your dark/light mode logic here
       });
     });
   </script>
