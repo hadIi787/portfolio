@@ -80,7 +80,6 @@
       }
     }
   </style>
-  </style>
 </head>
 <body>
   <canvas id="three-bg"></canvas>
@@ -212,24 +211,15 @@
     </div>
   </section>
 <!-- DATA ANALYSIS SECTION -->
-<section class="data-analysis data-animate" id="data-analysis">
+<section class="data-analysis data-animate" id="data-analysis" style="border: 5px solid red;">
   <h2><span class="data-icon">📊</span> Data Analysis</h2>
   <div class="data-analysis-content">
+    <p style="color: red; font-size: 2em;">TEST: If you see this, the Data Analysis section is visible.</p>
     <p>
-      I have a strong interest in data analysis, leveraging tools like <strong>Python (Pandas, NumPy, Matplotlib)</strong>, <strong>Excel</strong>, and <strong>Google Data Studio</strong> to extract insights from complex datasets. My experience includes analyzing automobile sensor data, visualizing trends in AI model performance, and presenting actionable insights for school projects and personal research. I enjoy transforming raw data into compelling stories and using analytics to drive smarter decisions in both technology and business.
+      I leverage data analysis to extract insights from AI, automotive, and business intelligence projects. My experience includes analyzing sensor data, evaluating AI model performance, and presenting actionable business insights. Below is a breakdown of my project focus by sector.
     </p>
-    <ul class="data-analysis-tools">
-      <li>Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
-      <li>Excel & Google Sheets</li>
-      <li>Google Data Studio</li>
-      <li>Data Visualization</li>
-      <li>Statistical Analysis</li>
-      <li>Automobile Sensor Data</li>
-      <li>AI Model Evaluation</li>
-    </ul>
     <div class="data-graphs">
-      <canvas id="barChart" width="400" height="220"></canvas>
-      <canvas id="lineChart" width="400" height="220"></canvas>
+      <canvas id="sectorBarChart" width="400" height="220"></canvas>
     </div>
   </div>
 </section>
@@ -313,46 +303,33 @@
       });
     });
   </script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const barCtx = document.getElementById('barChart').getContext('2d');
-    const lineCtx = document.getElementById('lineChart').getContext('2d');
-
-    new Chart(barCtx, {
-      type: 'bar',
-      data: {
-        labels: ['Python', 'Excel', 'Data Studio', 'AI Models'],
-        datasets: [{
-          label: 'Proficiency (%)',
-          data: [90, 80, 70, 75],
-          backgroundColor: '#00E5FF'
-        }]
-      },
-      options: {
-        scales: {
-          y: { beginAtZero: true }
+    const sectorCtx = document.getElementById('sectorBarChart')?.getContext('2d');
+    if (sectorCtx) {
+      new Chart(sectorCtx, {
+        type: 'bar',
+        data: {
+          labels: ['AI', 'Automotive', 'Business Intelligence', 'Data Science'],
+          datasets: [{
+            label: 'Projects by Sector',
+            data: [8, 5, 6, 4],
+            backgroundColor: [
+              '#00E5FF',
+              '#2962FF',
+              '#00BFAE',
+              '#FFD600'
+            ]
+          }]
+        },
+        options: {
+          scales: {
+            y: { beginAtZero: true }
+          }
         }
-      }
-    });
-
-    new Chart(lineCtx, {
-      type: 'line',
-      data: {
-        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-        datasets: [{
-          label: 'Insights Delivered',
-          data: [2, 5, 3, 6],
-          borderColor: '#2962FF',
-          fill: false,
-          tension: 0.3
-        }]
-      },
-      options: {
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
-    });
+      });
+    }
   });
 </script>
 </body>
