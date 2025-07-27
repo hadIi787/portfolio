@@ -129,16 +129,7 @@
     html {
       scroll-behavior: smooth;
     }
-    .fade-in-section {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s cubic-bezier(.77,0,.18,1);
-      will-change: opacity, transform;
-    }
-    .fade-in-section.visible {
-      opacity: 1;
-      transform: none;
-    }
+    /* Remove duplicate or conflicting fade-in/fade-out styles and scripts */
   </style>
 </head>
 <body>
@@ -427,22 +418,7 @@
     });
   </script>
   <script>
-    // Fade-in animation for sections
-    document.addEventListener('DOMContentLoaded', function () {
-      const sections = document.querySelectorAll('section, header, footer');
-      sections.forEach(sec => sec.classList.add('fade-in-section'));
-      function revealSections() {
-        const trigger = window.innerHeight * 0.92;
-        sections.forEach(sec => {
-          const rect = sec.getBoundingClientRect();
-          if (rect.top < trigger) {
-            sec.classList.add('visible');
-          }
-        });
-      }
-      window.addEventListener('scroll', revealSections);
-      revealSections();
-    });
+    // Remove buggy or duplicate fade-in/fade-out scripts
   </script>
 </body>
 </html> 
