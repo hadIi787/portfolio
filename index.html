@@ -211,19 +211,18 @@
     </div>
   </section>
 <!-- DATA ANALYSIS SECTION -->
-<section class="data-analysis data-animate" id="data-analysis" style="border: 5px solid red;">
-  <h2><span class="data-icon">📊</span> Data Analysis</h2>
-  <div class="data-analysis-content">
-    <p style="color: red; font-size: 2em;">TEST: If you see this, the Data Analysis section is visible.</p>
-    <p>
-      I leverage data analysis to extract insights from AI, automotive, and business intelligence projects. My experience includes analyzing sensor data, evaluating AI model performance, and presenting actionable business insights. Below is a breakdown of my project focus by sector.
-    </p>
-    <div class="data-graphs">
-      <canvas id="sectorBarChart" width="400" height="220"></canvas>
-    </div>
-  </div>
+<section class="data-analysis" id="data-analysis" style="margin: 40px auto; max-width: 600px; background: yellow; border: 6px solid green; border-radius: 16px; box-shadow: 0 4px 24px #00e5ff33; padding: 32px 24px;">
+  <h2 style="text-align:center; color:#00e5ff; margin-bottom: 16px;">Data Analysis</h2>
+  <p style="text-align:center; color:#222; margin-bottom: 24px; font-weight:bold;">
+    DEBUG: This section should always be visible! If it disappears, something is removing or hiding it.
+  </p>
+  <p style="text-align:center; color:#222; margin-bottom: 24px;">
+    I analyze data from AI, automotive, and business intelligence projects to extract insights and drive innovation. Here’s a breakdown of my project focus by sector:
+  </p>
+  <canvas id="sectorBarChart" width="500" height="260" style="display:block; margin:0 auto;"></canvas>
 </section>
- <!-- EDUCATION & EXPERIENCE SECTION -->
+
+  <!-- EDUCATION & EXPERIENCE SECTION -->
   <section class="education education-animate" id="education">
     <h2>Education & Experience</h2>
     <ul class="education-list">
@@ -306,7 +305,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const sectorCtx = document.getElementById('sectorBarChart')?.getContext('2d');
+    const sectorSection = document.getElementById('data-analysis');
+    console.log('DEBUG: Data Analysis section present after DOMContentLoaded?', !!sectorSection);
+    const sectorCtx = document.getElementById('sectorBarChart');
     if (sectorCtx) {
       new Chart(sectorCtx, {
         type: 'bar',
@@ -324,6 +325,9 @@
           }]
         },
         options: {
+          plugins: {
+            legend: { display: false }
+          },
           scales: {
             y: { beginAtZero: true }
           }
