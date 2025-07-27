@@ -11,37 +11,6 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
  <style>
-.custom-cursor {
-  position: fixed;
-  width: 24px;
-  height: 24px;
-  pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-}
-
-.custom-cursor::before,
-.custom-cursor::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-}
-
-.custom-cursor::before {
-  top: 0;
-  left: 0;
-  box-shadow:
-    0 0 0 2px white inset,
-    18px 0 0 0 white,
-    0 18px 0 0 white,
-    18px 18px 0 2px transparent;
-}
-
-.custom-cursor::after {
-  display: none; /* we use only ::before for all corners */
-}
     /* NAVIGATION FIXES */
     .nav-tabs {
       display: flex;
@@ -345,14 +314,5 @@
       });
     });
   </script>
-<script>
-  const cursor = document.getElementById("custom-cursor");
-
-  document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX - 12 + "px"; // centers the 24x24 box
-    cursor.style.top = e.clientY - 12 + "px";
-  });
-</script>
-<div class="custom-cursor" id="custom-cursor"></div>
 </body>
 </html>
