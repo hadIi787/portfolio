@@ -11,6 +11,44 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
  <style>
+/* MODE TOGGLE POSITIONING */
+.mode-toggle {
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00e5ff 40%, transparent 70%);
+  box-shadow: 0 0 15px #00e5ff;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode-toggle .gear {
+  width: 100%;
+  height: 100%;
+  background-image: url('gear-icon.svg'); /* Replace with your gear icon or remove if using inline SVG */
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .mode-toggle {
+    top: 120px;
+    right: 10px;
+    width: 60px;
+    height: 60px;
+  }
+}
     /* NAVIGATION FIXES */
     .nav-tabs {
       display: flex;
