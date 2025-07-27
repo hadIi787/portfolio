@@ -1,4 +1,4 @@
-!DOCTYP<E html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
  <meta charset="UTF-8" />
@@ -11,89 +11,6 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
  <style>
-/* DARK/LIGHT MODE TOGGLE - ORIGINAL LOOK, SYMMETRICAL POSITION */
-.mode-toggle {
-  position: fixed;
-  top: 72px;
-  right: 10px;
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 50%;
-  background: radial-gradient(circle, #00e5ff 40%, transparent 70%);
-  box-shadow: 0 0 15px #00e5ff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 999;
-  transition: transform 0.3s ease;
-}
-
-.mode-toggle:hover {
-  transform: rotate(90deg);
-}
-
-.mode-toggle .gear {
-  width: 24px;
-  height: 24px;
-  background-color: white;
-  mask: url('gear.svg') no-repeat center;
-  -webkit-mask: url('gear.svg') no-repeat center;
-  mask-size: cover;
-  -webkit-mask-size: cover;
-}
-
-/* Responsive adjustment */
-@media (max-width: 768px) {
-  .mode-toggle {
-    top: 120px;
-    right: 10px;
-  }
-
-  .mode-toggle .gear {
-    width: 30px;
-    height: 30px;
-  }
-}
-/* MODE TOGGLE POSITIONING */
-.mode-toggle {
-  position: fixed;
-  top: 72px;
-  right: 10px;
-  width: 85px;
-  height: 85px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #00e5ff 40%, transparent 70%);
-  box-shadow: 0 0 15px #00e5ff;
-  border: none;
-  cursor: pointer;
-  z-index: 999;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mode-toggle .gear {
-  width: 100%;
-  height: 100%;
-  background-image: url('gear-icon.svg'); /* Replace with your gear icon or remove if using inline SVG */
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 50%;
-  border: 2px solid white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 768px) {
-  .mode-toggle {
-    top: 120px;
-    right: 10px;
-    width: 60px;
-    height: 60px;
-  }
-}
     /* NAVIGATION FIXES */
     .nav-tabs {
       display: flex;
@@ -165,11 +82,12 @@
   </style>
 </head>
 <body>
-  <!-- REMOVE heavy background and animation layers for smoothness -->
-  <!-- <canvas id="three-bg"></canvas> -->
-  <!-- <canvas id="bg-particles"></canvas> -->
-  <!-- <div class="background-animated"></div> -->
-  <!-- <div class="floating-keywords"></div> -->
+  <canvas id="three-bg"></canvas>
+  <!-- Three.js 3D transitions will be rendered here -->
+  <canvas id="bg-particles"></canvas>
+  <!-- Animated digital data streams background -->
+  <div class="background-animated"></div>
+  <div class="floating-keywords"></div>
   <!-- NAVIGATION TABS -->
   <nav class="nav-tabs premium-nav">
     <button class="nav-tab" data-tab="hero"><span class="nav-icon">🏠</span> Home</button>
@@ -181,7 +99,6 @@
     <button class="nav-tab" data-tab="passions"><span class="nav-icon">🎥</span> Passions</button>
     <button class="nav-tab" data-tab="contact"><span class="nav-icon">✉️</span> Contact</button>
   </nav>
-
   <!-- HERO SECTION -->
   <header class="hero" id="hero">
     <div class="hero-content hero-animate">
@@ -381,20 +298,20 @@
   <img src="hadiprofile.jpg" alt="Hadi Profile" class="profile-picture-glow" />
 </div>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('a[href^="#"], .nav-tab').forEach(function(el) {
-        el.addEventListener('click', function(e) {
-          const href = el.getAttribute('href') || el.dataset.tab && ('#' + el.dataset.tab);
-          if (href && href.startsWith('#')) {
-            const target = document.querySelector(href);
-            if (target) {
-              e.preventDefault();
-              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="#"], .nav-tab').forEach(function(el) {
+      el.addEventListener('click', function(e) {
+        const href = el.getAttribute('href') || el.dataset.tab && ('#' + el.dataset.tab);
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
-        });
+        }
       });
     });
-  </script>
+  });
+</script>
 </body>
-</html> 
+</html>
