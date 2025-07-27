@@ -11,6 +11,40 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
  <style>
+  .bracket-cursor {
+    position: fixed;
+    width: 50px;
+    height: 30px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition: transform 0.05s ease-out;
+  }
+
+  .bracket-cursor::before,
+  .bracket-cursor::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-color: #00e5ff;
+  }
+
+  .bracket-cursor::before {
+    border-style: solid;
+    border-width: 2px 0 0 2px; /* top-left corner */
+    top: 0;
+    left: 0;
+  }
+
+  .bracket-cursor::after {
+    border-style: solid;
+    border-width: 0 2px 2px 0; /* bottom-right corner */
+    bottom: 0;
+    right: 0;
+  }
     /* NAVIGATION FIXES */
     .nav-tabs {
       display: flex;
@@ -298,6 +332,34 @@
   <img src="hadiprofile.jpg" alt="Hadi Profile" class="profile-picture-glow" />
 </div>
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cursor = document.createElement("div");
+    cursor.classList.add("bracket-cursor");
+    document.body.appendChild(cursor);
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let currentX = mouseX;
+    let currentY = mouseY;
+
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animateCursor() {
+      // Lerp toward the target position
+      currentX += (mouseX - currentX) * 0.12;
+      currentY += (mouseY - currentY) * 0.12;
+
+      cursor.style.left = currentX + "px";
+      cursor.style.top = currentY + "px";
+
+      requestAnimationFrame(animateCursor);
+    }
+
+    animateCursor();
+  });
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('a[href^="#"], .nav-tab').forEach(function(el) {
       el.addEventListener('click', function(e) {
