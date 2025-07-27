@@ -11,6 +11,38 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
  <style>
+.mode-toggle {
+  position: fixed;
+  top: 72px;
+  right: 10px;
+  z-index: 999;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.mode-toggle .gear {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00e5ff 40%, transparent 70%);
+  border: 2px solid white;
+  box-shadow: 0 0 15px #00e5ff, 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .mode-toggle {
+    top: 120px;
+    right: 10px;
+  }
+
+  .mode-toggle .gear {
+    width: 30px;
+    height: 30px;
+  }
+}
 /* MODE TOGGLE POSITIONING */
 .mode-toggle {
   position: fixed;
