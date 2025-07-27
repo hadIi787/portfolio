@@ -125,6 +125,21 @@
       }
     }
   </style>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s cubic-bezier(.77,0,.18,1);
+      will-change: opacity, transform;
+    }
+    .fade-in-section.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
 </head>
 <body>
   <canvas id="three-bg"></canvas>
@@ -316,7 +331,7 @@
   <!-- CONTACT SECTION -->
   <footer class="contact contact-animate" id="contact">
     <h2>Contact</h2>
-    <form class="contact-form">
+    <form id="contactForm" action="https://formspree.io/f/mzzvrngk" method="POST" class="contact-form">
       <div class="form-group">
         <input type="text" id="name" name="name" required />
         <label for="name">Name</label>
@@ -331,6 +346,7 @@
       </div>
       <button type="submit" class="btn-glow">Send Message</button>
     </form>
+    <div id="formSuccessMsg" style="display:none; color:#00e5ff; font-weight:bold; text-align:center; margin-top:1.5rem;"></div>
     <div class="footer-links">
       <a href="mailto:hadimuhammed185@gmail.com" class="footer-icon" title="Email" target="_blank">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4.5A2.5 2.5 0 014.5 2h15A2.5 2.5 0 0122 4.5v15a2.5 2.5 0 01-2.5 2.5h-15A2.5 2.5 0 012 19.5v-15z" stroke="#00E5FF" stroke-width="2"/><path d="M3.5 5.5L12 13l8.5-7.5" stroke="#2962FF" stroke-width="2"/></svg>
@@ -376,6 +392,56 @@
         modeToggle.classList.toggle('rotating', rotated);
         // You can add your dark/light mode logic here
       });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contactForm');
+      const successMsg = document.getElementById('formSuccessMsg');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const name = formData.get('name');
+        fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+          if (response.ok) {
+            form.reset();
+            successMsg.textContent = `MESSAGE SENT \"${name}\"`;
+            successMsg.style.display = 'block';
+          } else {
+            response.json().then(data => {
+              successMsg.textContent = data.error || 'There was a problem sending your message.';
+              successMsg.style.display = 'block';
+            });
+          }
+        })
+        .catch(() => {
+          successMsg.textContent = 'There was a problem sending your message.';
+          successMsg.style.display = 'block';
+        });
+      });
+    });
+  </script>
+  <script>
+    // Fade-in animation for sections
+    document.addEventListener('DOMContentLoaded', function () {
+      const sections = document.querySelectorAll('section, header, footer');
+      sections.forEach(sec => sec.classList.add('fade-in-section'));
+      function revealSections() {
+        const trigger = window.innerHeight * 0.92;
+        sections.forEach(sec => {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top < trigger) {
+            sec.classList.add('visible');
+          }
+        });
+      }
+      window.addEventListener('scroll', revealSections);
+      revealSections();
     });
   </script>
 </body>
