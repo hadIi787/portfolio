@@ -10,21 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
   <script defer src="script.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
  <style>
-.data-analysis {
-  padding: 60px 20px;
-  color: #fff;
-  text-align: center;
-}
-
-.data-analysis canvas {
-  margin-top: 30px;
-  max-width: 90%;
-  box-shadow: 0 0 12px #00e5ff;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 12px;
-}
     /* NAVIGATION FIXES */
     .nav-tabs {
       display: flex;
@@ -94,6 +80,7 @@
       }
     }
   </style>
+  </style>
 </head>
 <body>
   <canvas id="three-bg"></canvas>
@@ -108,7 +95,7 @@
     <button class="nav-tab" data-tab="about"><span class="nav-icon">👤</span> About</button>
     <button class="nav-tab" data-tab="projects"><span class="nav-icon">💡</span> Projects</button>
     <button class="nav-tab" data-tab="skills"><span class="nav-icon">🛠️</span> Skills</button>
-<button class="nav-tab" data-tab="data"><span class="nav-icon">📊</span> Data Analysis</button>
+    <button class="nav-tab" data-tab="data-analysis"><span class="nav-icon">📊</span> Data Analysis</button>
     <button class="nav-tab" data-tab="education"><span class="nav-icon">🎓</span> Education</button>
     <button class="nav-tab" data-tab="passions"><span class="nav-icon">🎥</span> Passions</button>
     <button class="nav-tab" data-tab="contact"><span class="nav-icon">✉️</span> Contact</button>
@@ -224,13 +211,29 @@
       </div>
     </div>
   </section>
-<section class="data-analysis data-animate" id="data">
-  <h2>Data Analysis</h2>
-  <p class="about-font">
-    Here's a visual representation of my work areas and their completion levels. I believe in using data-driven insights to optimize decisions and maximize performance.
-  </p>
-  <canvas id="dataChart" width="600" height="400"></canvas>
-</section>
+  <!-- DATA ANALYSIS SECTION -->
+  <section class="data-analysis data-animate" id="data-analysis">
+    <h2><span class="data-icon">📊</span> Data Analysis</h2>
+    <div class="data-analysis-content">
+      <p>
+        I have a strong interest in data analysis, leveraging tools like <strong>Python (Pandas, NumPy, Matplotlib)</strong>, <strong>Excel</strong>, and <strong>Google Data Studio</strong> to extract insights from complex datasets. My experience includes analyzing automobile sensor data, visualizing trends in AI model performance, and presenting actionable insights for school projects and personal research. I enjoy transforming raw data into compelling stories and using analytics to drive smarter decisions in both technology and business.
+      </p>
+      <ul class="data-analysis-tools">
+        <li>Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
+        <li>Excel & Google Sheets</li>
+        <li>Google Data Studio</li>
+        <li>Data Visualization</li>
+        <li>Statistical Analysis</li>
+        <li>Automobile Sensor Data</li>
+        <li>AI Model Evaluation</li>
+      </ul>
+      <div class="data-graphs">
+        <canvas id="barChart" width="400" height="220"></canvas>
+        <canvas id="lineChart" width="400" height="220"></canvas>
+      </div>
+    </div>
+  </section>
+
   <!-- EDUCATION & EXPERIENCE SECTION -->
   <section class="education education-animate" id="education">
     <h2>Education & Experience</h2>
@@ -311,73 +314,5 @@
       });
     });
   </script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const sectorSection = document.getElementById('data-analysis');
-    console.log('DEBUG: Data Analysis section present after DOMContentLoaded?', !!sectorSection);
-    const sectorCtx = document.getElementById('sectorBarChart');
-    if (sectorCtx) {
-      new Chart(sectorCtx, {
-        type: 'bar',
-        data: {
-          labels: ['AI', 'Automotive', 'Business Intelligence', 'Data Science'],
-          datasets: [{
-            label: 'Projects by Sector',
-            data: [8, 5, 6, 4],
-            backgroundColor: [
-              '#00E5FF',
-              '#2962FF',
-              '#00BFAE',
-              '#FFD600'
-            ]
-          }]
-        },
-        options: {
-          plugins: {
-            legend: { display: false }
-          },
-          scales: {
-            y: { beginAtZero: true }
-          }
-        }
-      });
-    }
-  });
-</script>
-<script>
-  const ctx = document.getElementById('dataChart').getContext('2d');
-  const dataChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['AI Projects', 'Web Dev', 'Data Tasks', 'Graphics', 'Research'],
-      datasets: [{
-        label: 'Completion (%)',
-        data: [90, 85, 70, 75, 60],
-        backgroundColor: ['#00E5FFAA', '#00E5FF88', '#00E5FF66', '#00E5FF55', '#00E5FF44'],
-        borderColor: '#00E5FF',
-        borderWidth: 2
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { labels: { color: '#00E5FF' } }
-      },
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: { color: '#00E5FF' },
-          grid: { color: '#00E5FF33' }
-        },
-        x: {
-          ticks: { color: '#00E5FF' },
-          grid: { color: '#00E5FF33' }
-        }
-      }
-    }
-  });
-</script>
 </body>
 </html>
-
